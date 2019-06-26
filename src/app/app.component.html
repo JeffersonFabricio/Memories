@@ -1,2 +1,1 @@
-<m-photo url="https://img.ibxk.com.br///2019/04/01/01110608727063-t1200x480.jpg" description="Você é o cara"></m-photo>
-<m-photo url="https://amp.businessinsider.com/images/5d0bae5ce3ecba536905f1c3-750-563.jpg" description="Hmm"></m-photo>
+<m-photo *ngFor="let photo of photos" [url]="photo.url" [description]="photo.description"></m-photo>
