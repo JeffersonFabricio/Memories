@@ -12,7 +12,7 @@ export class PhotoService {
     }
 
     listFromUser(userName: string) {
-        return this.http.get<Photo[]>(url + '/flavio/photos');
+        return this.http.get<Photo[]>(url + userName + '/photos');
     }
 
 }
