@@ -8,13 +8,15 @@ import { PhotoListComponent } from './photo-list.component';
 import { PhotosComponent } from './photos/photos.component';
 import { LoadButtonComponent } from './load-button/load-button.component';
 import { FilterByDescription } from './filter-by-description.pipe';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({ 
     declarations: [
         PhotoListComponent,
         PhotosComponent,
         LoadButtonComponent,
-        FilterByDescription
+        FilterByDescription,
+        SearchComponent
     ],
     imports: [ 
         CommonModule,
@@ -22,6 +24,4 @@ import { FilterByDescription } from './filter-by-description.pipe';
         CardModule
     ]
 })
-export class PhotoListModule {
-
-}
+export class PhotoListModule { }

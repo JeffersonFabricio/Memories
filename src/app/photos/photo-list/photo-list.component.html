@@ -1,22 +1,5 @@
-<p class="text-center text-muted" *ngIf="!photos.length">
-    Sorry, no photos
-</p>
-
-<div class="text-center mt-3 mb-3">
-    <form>
-        <i aria-hidden="true" class="fas fa-search"></i>
-        <input
-            class="rounded"
-            type="search"
-            placeholder="search..."
-            autofocus
-            (keyup)="debounce.next($event.target.value)"
-        >
-    </form>
-</div>
-
+<m-search (onTyping)="filter = $event" [value]="filter"></m-search>
 <m-photos [photos]="photos | filterByDescription: filter"></m-photos>
-
 <m-load-button 
     (click)="load()"
     [hasMore]="hasMore">
