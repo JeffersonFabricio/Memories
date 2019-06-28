@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'am-photo',
+    selector: 'm-photo',
     templateUrl: 'photo.component.html'
 })
 export class PhotoComponent {

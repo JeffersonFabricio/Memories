@@ -14,4 +14,9 @@
     </form>
 </div>
 
-<am-photos [photos]="photos | filterByDescription: filter"></am-photos>
+<m-photos [photos]="photos | filterByDescription: filter"></m-photos>
+
+<m-load-button 
+    (click)="load()"
+    [hasMore]="hasMore">
+</m-load-button>
