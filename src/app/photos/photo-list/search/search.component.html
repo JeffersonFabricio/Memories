@@ -1,11 +1,7 @@
-<p class="text-center text-muted" *ngIf="!photos.length">
-    Sorry, no photos
-</p>
-
 <div class="text-center mt-3 mb-3">
     <form>
-        <i aria-hidden="true" class="fas fa-search"></i>
-        <input class="rounded" type="search" placeholder="search..." autofocus
+        <i aria-hidden="true" class="fas fa-search mr-2"></i>
+        <input class="rounded" type="search" placeholder="Procurar..." autofocus
             (keyup)="debounce.next($event.target.value)"
             [value]="value"
         >
