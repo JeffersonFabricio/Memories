@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -10,6 +10,7 @@ import { AuthService } from '../../core/auth.service';
 export class SignInComponent {
 
     loginForm: FormGroup;
+    @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement>;
 
     constructor(
         private fb: FormBuilder,
@@ -35,6 +36,7 @@ export class SignInComponent {
                 err => {
                     console.log(err);
                     this.loginForm.reset();
+                    this.userNameInput.nativeElement.focus();
                     alert('Usuário ou Senha inválida');
                 }
             );
