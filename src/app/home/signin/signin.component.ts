@@ -2,7 +2,8 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { AuthService } from '../../core/auth.service';
+import { AuthService } from '../../core/auth/auth.service';
+import { PlatformDetectorService } from '../../core/plataform/platform-detector.service';
 
 @Component({
     templateUrl: './signin.component.html'
@@ -15,7 +16,8 @@ export class SignInComponent {
     constructor(
         private fb: FormBuilder,
         private as: AuthService,
-        private router: Router
+        private router: Router,
+        private platformDetectorService: PlatformDetectorService
     ) {}
 
     ngOnInit(): void {
@@ -36,7 +38,8 @@ export class SignInComponent {
                 err => {
                     console.log(err);
                     this.loginForm.reset();
-                    this.userNameInput.nativeElement.focus();
+                    this.platformDetectorService.isPlatformBrowser() &&
+                        this.userNameInput.nativeElement.focus();
                     alert('Usuário ou Senha inválida');
                 }
             );
