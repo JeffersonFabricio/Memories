@@ -9,11 +9,7 @@
             placeholder="Informe o Usuário" 
             autofocus
         >
-        <small
-            *ngIf="loginForm.get('userName').errors?.required"
-            class="text-danger d-block mt-2">
-            Por favor informe o usuário!
-        </small>
+        <m-vmsg *ngIf="loginForm.get('userName').errors?.required" text="Por favor informe o usuário!"></m-vmsg>
     </div>
 
     <div class="form-group">
@@ -23,11 +19,7 @@
             class="form-control" 
             placeholder="Digite a Senha"
         >
-        <small
-            *ngIf="loginForm.get('password').errors?.required"
-            class="text-danger d-block mt-2">
-            Por favor informe a senha!
-        </small>
+        <m-vmsg *ngIf="loginForm.get('password').errors?.required"  text="Por favor informe a senha!"></m-vmsg>
     </div>
 
     <button
