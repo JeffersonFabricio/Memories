@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { VMsgModule } from './../shared/components/vmsg/vmsg.module';
 import { SignInComponent } from './signin/signin.component';
@@ -10,7 +11,8 @@ import { SignInComponent } from './signin/signin.component';
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        VMsgModule
+        VMsgModule,
+        RouterModule
     ]
 })
 export class HomeModule { }
