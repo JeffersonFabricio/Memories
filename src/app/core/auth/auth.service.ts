@@ -4,7 +4,7 @@ import { tap } from 'rxjs/operators';
 
 import { UserService } from '../user/user.service';
 
-const API_URL = 'http:/localhost:3000'
+const API_URL = 'http:/localhost:3000';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class AuthService {
   authenticate(userName: string, password: string){
     return this.http.post( 
       API_URL + '/user/login',
-       { userName, password },
+        { userName, password },
         { observe: 'response' } 
       )
     .pipe(tap(res => {

@@ -1,6 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { AuthService } from '../../core/auth/auth.service';
 import { PlatformDetectorService } from '../../core/plataform/platform-detector.service';
@@ -8,7 +8,7 @@ import { PlatformDetectorService } from '../../core/plataform/platform-detector.
 @Component({
     templateUrl: './signin.component.html'
 })
-export class SignInComponent {
+export class SignInComponent implements OnInit {
 
     loginForm: FormGroup;
     @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement>;
