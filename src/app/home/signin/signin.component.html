@@ -9,7 +9,10 @@
             placeholder="Informe o Usuário" 
             autofocus
         >
-        <m-vmsg *ngIf="loginForm.get('userName').errors?.required" text="Por favor informe o usuário!"></m-vmsg>
+        <m-vmsg 
+            *ngIf="loginForm.get('userName').errors?.required" 
+            text="Por favor informe o usuário!">
+        </m-vmsg>
     </div>
 
     <div class="form-group">
@@ -19,7 +22,10 @@
             class="form-control" 
             placeholder="Digite a Senha"
         >
-        <m-vmsg *ngIf="loginForm.get('password').errors?.required"  text="Por favor informe a senha!"></m-vmsg>
+        <m-vmsg 
+            *ngIf="loginForm.get('password').errors?.required" 
+            text="Por favor informe a senha!">
+        </m-vmsg>
     </div>
 
     <button

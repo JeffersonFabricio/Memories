@@ -22,7 +22,7 @@ export class AuthService {
         { userName, password },
         { observe: 'response' } 
       )
-    .pipe(tap(res => {
+      .pipe(tap(res => {
       const authToken = res.headers.get('x-access-token');
       this.userService.setToken(authToken);
       console.log(`Usario ${userName} autenticado com token ${authToken}`);

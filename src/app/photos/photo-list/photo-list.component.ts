@@ -36,6 +36,6 @@ export class PhotoListComponent implements OnInit {
             this.photos = this.photos.concat(photos);
             if(!photos.length) this.hasMore = false;
         });
-}
+  }
 
 }
