@@ -1,23 +1,71 @@
 <h4 class="text-center"> Register to embrace a new world!</h4>
 
-<form class="form mt-4">
+<form [formGroup]="signupForm" class="form mt-4">
   <div class="form-group">
-    <input placeholder="email" class="form-control" autofocus>
+    <input formControlName="email" placeholder="E-mail" class="form-control" autofocus>
+    <m-vmsg 
+      *ngIf="signupForm.get('email').errors?.required" 
+      text="Por favor informe o email!">
+    </m-vmsg>
+    <m-vmsg 
+      *ngIf="signupForm.get('email').errors?.email" 
+      text="E-mail inválido!">
+    </m-vmsg>
   </div>
 
   <div class="form-group">
-    <input placeholder="full name" class="form-control">
+    <input formControlName="fullName" placeholder="Nome Completo" class="form-control">
+    <m-vmsg 
+      *ngIf="signupForm.get('fullName').errors?.required" 
+      text="Por favor informe o nome completo!">
+    </m-vmsg>
+    <m-vmsg 
+      *ngIf="signupForm.get('fullName').errors?.minlength" 
+      text="O minimo de caracteres é 2!">
+    </m-vmsg>
+    <m-vmsg 
+      *ngIf="signupForm.get('fullName').errors?.maxlength" 
+      text="Máximo de caracteres é 40!">
+    </m-vmsg>
   </div>
 
   <div class="form-group">
-    <input placeholder="user name" class="form-control">
+    <input formControlName="userName" placeholder="Nome de usuário" class="form-control">
+    <m-vmsg 
+      *ngIf="signupForm.get('userName').errors?.required" 
+      text="Por favor informe o nome!">
+    </m-vmsg>
+    <m-vmsg 
+      *ngIf="signupForm.get('userName').errors?.minlength" 
+      text="O minimo de caracteres é 2!">
+    </m-vmsg>
+    <m-vmsg 
+      *ngIf="signupForm.get('userName').errors?.maxlength" 
+      text="Máximo de caracteres é 30!">
+    </m-vmsg>
+    <m-vmsg 
+      *ngIf="signupForm.get('userName').errors?.pattern" 
+      text="Senha inválida!">
+    </m-vmsg>
   </div>
 
   <div class="form-group">
-    <input type="password" placeholder="password" class="form-control">
+    <input formControlName="password" type="password" placeholder="Senha" class="form-control">
+    <m-vmsg 
+      *ngIf="signupForm.get('password').errors?.required" 
+      text="Por favor informe a senha!">
+    </m-vmsg>
+    <m-vmsg 
+      *ngIf="signupForm.get('password').errors?.minlength" 
+      text="O minimo de caracteres é 8!">
+    </m-vmsg>
+    <m-vmsg 
+      *ngIf="signupForm.get('password').errors?.maxlength" 
+      text="Máximo de caracteres é 14!">
+    </m-vmsg>
   </div>
 
-  <button class="btn btn-primary btn-block">Register</button>
+  <button class="btn btn-primary btn-block">Registrar</button>
 
-  <p>Already a user?<a [routerLink]="['']">Sign In!</a></p>
+  <p>Já tem usuário?<a [routerLink]="['']">Entrar!</a></p>
 </form>
