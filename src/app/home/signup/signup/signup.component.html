@@ -44,7 +44,7 @@
       text="Máximo de caracteres é 30!">
     </m-vmsg>
     <m-vmsg 
-      *ngIf="signupForm.get('userName').errors?.pattern" 
+      *ngIf="signupForm.get('userName').errors?.lowerCase" 
       text="Senha inválida!">
     </m-vmsg>
   </div>
